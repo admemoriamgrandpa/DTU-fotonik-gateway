@@ -8,9 +8,6 @@ if [ $UID != 0 ]; then
     exit 1
 fi
 
-git fetch
-git checkout
-git pull
 
 # Request gateway configuration data
 # There are two ways to do it, manually specify everything
