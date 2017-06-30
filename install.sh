@@ -8,24 +8,7 @@ if [ $UID != 0 ]; then
     exit 1
 fi
 
-VERSION="spi"
-if [[ $1 != "" ]]; then VERSION=$1; fi
-
 echo "LoRaWAN for COSIGN Project"
-echo "Version $VERSION"
-
-# Update the gateway installer to the correct branch
-echo "Updating installer files..."
-OLD_HEAD=$(git rev-parse HEAD)
-git fetch
-git checkout -q $VERSION
-git pull
-NEW_HEAD=$(git rev-parse HEAD)
-
-if [[ $OLD_HEAD != $NEW_HEAD ]]; then
-    echo "New installer found. Restarting process..."
-    exec "./install.sh" "$VERSION"
-fi
 
 # Request gateway configuration data
 # There are two ways to do it, manually specify everything
