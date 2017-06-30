@@ -2,9 +2,9 @@
 Description= DTU LoRaWAN Gateway
 
 [Service]
-WorkingDirectory=/opt/DTU-fotonik_gateway.service/bin/
-ExecStart=/opt/DTU-fotonik_gateway.service/bin/start.sh
-SyslogIdentifier=DTU-fotonik_gateway.service
+WorkingDirectory=/opt/DTU-fotonik-gateway.service/bin/
+ExecStart=/opt/DTU-fotonik-gateway.service/bin/start.sh
+SyslogIdentifier=DTU-fotonik-gateway.service
 Restart=on-failure
 RestartSec=5
 
