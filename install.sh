@@ -53,16 +53,16 @@ read -r -p "Do you want to use remote settings file? [y/N]" response
 response=${response,,} # tolower
 
 if [[ $response =~ ^(yes|y) ]]; then
-    NEW_HOSTNAME="DTU-fotonik_gateway"
+    NEW_HOSTNAME="DTU-fotonik-gateway"
     REMOTE_CONFIG=true
 else
-    printf "       Host name [DTU-FOTONIK]:"
+    printf "       Host name [DTU-fotonik-gateway]:"
     read NEW_HOSTNAME
-    if [[ $NEW_HOSTNAME == "" ]]; then NEW_HOSTNAME="DTU-FOTONIK"; fi
+    if [[ $NEW_HOSTNAME == "" ]]; then NEW_HOSTNAME="DTU-fotonik-gateway"; fi
 
     printf "       Descriptive name [DTU-fotonik_gateway]:"
     read GATEWAY_NAME
-    if [[ $GATEWAY_NAME == "" ]]; then GATEWAY_NAME="DTU-fotonik_gateway"; fi
+    if [[ $GATEWAY_NAME == "" ]]; then GATEWAY_NAME="DTU-fotonik-gateway"; fi
 
     printf "       Contact email: "
     read GATEWAY_EMAIL
