@@ -8,7 +8,7 @@ if [ $UID != 0 ]; then
     exit 1
 fi
 
-git pull
+
 git reset --hard
 
 # Request gateway configuration data
