@@ -19,9 +19,9 @@ while [[ $(ping -c1 google.com 2>&1 | grep " 0% packet loss") == "" ]]; do
   done
 
 # If there's a remote config, try to update it
-if [ -d ../gateway-remote-config ]; then
+if [ -d ../cosign_config ]; then
     # First pull from the repo
-    pushd ../gateway-remote-config/
+    pushd ../cosign_config/
     git pull
     git reset --hard
     popd
@@ -47,7 +47,7 @@ if [ -d ../gateway-remote-config ]; then
     LOCAL_CONFIG_FILE=$INSTALL_DIR/bin/local_conf.json
 
     if [ -e $LOCAL_CONFIG_FILE ]; then rm $LOCAL_CONFIG_FILE; fi;
-    ln -s $INSTALL_DIR/gateway-remote-config/$GATEWAY_EUI.json $LOCAL_CONFIG_FILE
+    ln -s $INSTALL_DIR/cosign_config/$GATEWAY_EUI.json $LOCAL_CONFIG_FILE
 
 fi
 
