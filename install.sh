@@ -8,6 +8,8 @@ if [ $UID != 0 ]; then
     exit 1
 fi
 
+git pull
+git reset --hard
 
 # Request gateway configuration data
 # There are two ways to do it, manually specify everything
@@ -88,12 +90,11 @@ fi
 
 # Build LoRa gateway app
 if [ ! -d lora_gateway ]; then
-    git clone -b legacy https://github.com/admemoriamgrandpa/lora_gateway.git
+    git clone legacy https://github.com/admemoriamgrandpa/lora_gateway.git
     pushd lora_gateway
 else
     pushd lora_gateway
-    git fetch origin
-    git checkout legacy
+    git pull
     git reset --hard
 fi
 
@@ -105,12 +106,11 @@ popd
 
 # Build packet forwarder
 if [ ! -d packet_forwarder ]; then
-    git clone -b legacy https://github.com/admemoriamgrandpa/packet_forwarder.git
+    git clone https://github.com/admemoriamgrandpa/packet_forwarder.git
     pushd packet_forwarder
 else
     pushd packet_forwarder
-    git fetch origin
-    git checkout legacy
+    git pull
     git reset --hard
 fi
 
