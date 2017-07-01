@@ -9,7 +9,7 @@ if [ $UID != 0 ]; then
 fi
 
 
-git reset --hard
+git pull origin master
 
 # Request gateway configuration data
 # There are two ways to do it, manually specify everything
