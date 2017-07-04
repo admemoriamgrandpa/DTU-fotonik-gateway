@@ -133,14 +133,14 @@ if [ "$REMOTE_CONFIG" = true ] ; then
     # Get remote configuration repo
     if [ ! -d remote-config ]; then
         git clone https://github.com/admemoriamgrandpa/gateway-remote-config.git
-        pushd remote-config
+        pushd gateway-remote-config
     else
-        pushd remote-config
+        pushd gateway-remote-config
         git pull
         git reset --hard
     fi
 
-    ln -s $INSTALL_DIR/remote-config/$GATEWAY_EUI.json $LOCAL_CONFIG_FILE
+    ln -s $INSTALL_DIR/gateway-remote-config/$GATEWAY_EUI.json $LOCAL_CONFIG_FILE
 
     popd
 else
