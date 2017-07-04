@@ -131,16 +131,16 @@ if [ -e $LOCAL_CONFIG_FILE ]; then rm $LOCAL_CONFIG_FILE; fi;
 
 if [ "$REMOTE_CONFIG" = true ] ; then
     # Get remote configuration repo
-    if [ ! -d cosign_config ]; then
+    if [ ! -d remote-config ]; then
         git clone https://github.com/admemoriamgrandpa/gateway-remote-config.git
-        pushd cosign_config
+        pushd remote-config
     else
-        pushd cosign_config
+        pushd remote-config
         git pull
         git reset --hard
     fi
 
-    ln -s $INSTALL_DIR/cosign_config/$GATEWAY_EUI.json $LOCAL_CONFIG_FILE
+    ln -s $INSTALL_DIR/remote-config/$GATEWAY_EUI.json $LOCAL_CONFIG_FILE
 
     popd
 else
