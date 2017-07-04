@@ -132,7 +132,7 @@ if [ -e $LOCAL_CONFIG_FILE ]; then rm $LOCAL_CONFIG_FILE; fi;
 if [ "$REMOTE_CONFIG" = true ] ; then
     # Get remote configuration repo
     if [ ! -d cosign_config ]; then
-        git clone https://github.com/admemoriamgrandpa/cosign_config.git
+        git clone https://github.com/admemoriamgrandpa/gateway-remote-config.git
         pushd cosign_config
     else
         pushd cosign_config
